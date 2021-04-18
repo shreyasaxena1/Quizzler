@@ -51,12 +51,16 @@ class QuizBrain {
   bool isFinished() {
     if (_questionNumber >= _quesSet.length - 1) {
 
+
       print('Now returning true');
       return true;
 
     } else {
+      print(_questionNumber);
+      print(_quesSet.length);
       return false;
     }
+
   }
 
   void reset() {

@@ -35,35 +35,37 @@ class _QuizPageState extends State<QuizPage> {
   void checkAnswer(bool userPicked) {
     bool ans = quizBrain.getQuestionAns();
     setState(() {
-      if (quizBrain.isFinished() == true) {
-        Alert(
-          context: context,
-          title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
-        ).show();
+      if (quizBrain.isFinished()==true){
+      Alert(
+      context: context,
+      title: 'Finished!',
+      desc: 'You\'ve reached the end of the quiz.',
+      ).show();
 
-        quizBrain.reset();
-        scoreKeeper = [];
+      quizBrain.reset();
+      scoreKeeper = [];
+      }
+      else{
+      if (ans == userPicked) {
+      scoreKeeper.add(
+      Icon(
+      Icons.check,
+      color: Colors.green,
+      ),
+      );
       } else {
-        if (ans == userPicked) {
-          scoreKeeper.add(
-            Icon(
-              Icons.check,
-              color: Colors.green,
-            ),
-          );
-        } else {
-          scoreKeeper.add(
-            Icon(
-              Icons.close,
-              color: Colors.red,
-            ),
-          );
-        }
-        quizBrain.nextQuestion();
+      scoreKeeper.add(
+      Icon(
+      Icons.close,
+      color: Colors.red,
+      ),
+      );
+      }
+      quizBrain.nextQuestion();
       }
     });
   }
+
 
   //   List<String> questions = [
   //     'You can lead a cow down stairs but not up stairs.',
@@ -137,17 +139,13 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
                 checkAnswer(false);
-
-                setState(() {
-                  quizBrain.nextQuestion();
-                });
               },
             ),
           ),
         ),
         Row(
           children:
-              scoreKeeper, //need list of widgets as children and scorekeeper is list of icon widget
+          scoreKeeper, //need list of widgets as children and scorekeeper is list of icon widget
         ),
       ],
     );

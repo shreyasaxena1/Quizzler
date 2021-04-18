@@ -1,9 +1,9 @@
 
 
 
-# Quizzler ❓
+# Quizzler 
 
-## Our Goal
+## Under Construction
 
 learning about the fundamental building blocks of Object Oriented Programming (OOP) - Classes and Objects and pillars of OOPs. 
 

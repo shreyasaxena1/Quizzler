@@ -12,6 +12,10 @@ learning about the fundamental building blocks of Object Oriented Programming (O
 
 ![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
 
+
+<img src = "finish.jpeg" width="50%">
+<img src = "quiz.jpeg" width="50%">
+
 ## Concepts Learned
 
 - Modularising your code into separate classes.

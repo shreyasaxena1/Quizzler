@@ -1,7 +1,10 @@
 import 'question.dart';
 
 class QuizBrain {
-  List<Question> quesSet = [
+  int _questionNumber = 0;
+
+  //make private _ before var
+  List<Question> _quesSet = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
@@ -27,6 +30,37 @@ class QuizBrain {
     Question(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
-
   ];
+
+  //goto next question
+
+  void nextQuestion() {
+    if (_questionNumber < _quesSet.length - 1) {
+      _questionNumber++;
+    }
+  }
+
+  String getQuestionText() {
+    return _quesSet[_questionNumber].questionText;
+  }
+
+  bool getQuestionAns() {
+    return _quesSet[_questionNumber].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (_questionNumber >= _quesSet.length - 1) {
+
+      print('Now returning true');
+      return true;
+
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNumber = 0;
+  }
 }
+
